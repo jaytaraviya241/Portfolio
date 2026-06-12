@@ -6,30 +6,19 @@ import {
   createRouter,
   useRouterState,
 } from "@tanstack/react-router";
-import { Suspense, lazy, useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { SiteNav } from "@/components/layout/SiteNav";
 import { Footer } from "@/components/layout/Footer";
 import { CommandPalette } from "@/components/layout/CommandPalette";
-
-const Home = lazy(() => import("@/routes/Home"));
-const Work = lazy(() => import("@/routes/Work"));
-const Services = lazy(() => import("@/routes/Services"));
-const About = lazy(() => import("@/routes/About"));
-const Contact = lazy(() => import("@/routes/Contact"));
-const CaseStudy = lazy(() => import("@/routes/work/CaseStudy"));
-
-function Fallback() {
-  return (
-    <div className="flex min-h-[60vh] items-center justify-center">
-      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-tx3">
-        loading<span className="text-volt">…</span>
-      </span>
-    </div>
-  );
-}
+import Home from "@/routes/Home";
+import Work from "@/routes/Work";
+import Services from "@/routes/Services";
+import About from "@/routes/About";
+import Contact from "@/routes/Contact";
+import CaseStudy from "@/routes/work/CaseStudy";
 
 function Page({ children }: { children: ReactNode }) {
-  return <Suspense fallback={<Fallback />}>{children}</Suspense>;
+  return <>{children}</>;
 }
 
 function RootLayout() {
