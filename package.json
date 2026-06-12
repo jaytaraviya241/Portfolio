@@ -4,9 +4,10 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc --noEmit && vite build",
+    "dev": "vite --open /app.html",
+    "build": "tsc --noEmit && vite build && node scripts/export-pages.mjs",
     "build:preview": "vite build --config vite.preview.config.ts",
+    "export:pages": "node scripts/export-pages.mjs",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },

@@ -19,5 +19,19 @@ export default defineConfig({
   },
   build: {
     target: "es2020",
+    rollupOptions: {
+      input: fileURLToPath(new URL("./app.html", import.meta.url)),
+      output: {
+        entryFileNames: "assets/app.js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: ({ name }) => {
+          if (name?.endsWith(".css")) {
+            return "assets/app.css";
+          }
+
+          return "assets/[name]-[hash][extname]";
+        },
+      },
+    },
   },
 });
