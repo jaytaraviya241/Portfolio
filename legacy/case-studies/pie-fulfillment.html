@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Custom Pie Fulfillment System — Jay Taraviya</title>
+  <meta name="description" content="How I built a complex Shopify fulfillment system — zip code gating, bundle building, conditional delivery UX — with zero third-party apps using Shopify Functions and native Liquid." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="../css/main.css" />
+  <style>
+    .case-hero {
+      padding: 160px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .case-hero__bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 800px 500px at 70% 0%, rgba(0,229,168,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .case-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .case-meta-item { }
+    .case-meta-item__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-2);
+      margin-bottom: 6px;
+    }
+    .case-meta-item__value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .case-meta-item__value a { color: var(--green); text-decoration: underline; }
+
+    .case-body {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .case-nav {
+      position: sticky;
+      top: 100px;
+    }
+    .case-nav__title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted-2);
+      margin-bottom: 16px;
+    }
+    .case-nav__links { display: flex; flex-direction: column; gap: 4px; }
+    .case-nav__link {
+      display: block;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      color: var(--muted);
+      transition: var(--transition);
+      border-left: 2px solid transparent;
+    }
+    .case-nav__link:hover,
+    .case-nav__link.active {
+      color: var(--text);
+      background: var(--surface);
+      border-left-color: var(--green);
+    }
+
+    .case-content { padding-bottom: 80px; }
+    .case-section { margin-bottom: 64px; }
+    .case-section h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+    .case-section p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .case-section p strong { color: var(--text); }
+    .case-section ul { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .case-section li {
+      display: flex;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--muted);
+      align-items: flex-start;
+    }
+    .case-section li::before {
+      content: '→';
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .code-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: 24px 0;
+    }
+    .code-block__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    .code-block__filename {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .code-block__lang {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .code-block__body {
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+    .code-block__body pre { margin: 0; }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      text-align: center;
+    }
+    .result-card__value {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .result-card__label {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .before-after__card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+    .before-after__label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .before-after__card.before .before-after__label { color: var(--red); }
+    .before-after__card.after  .before-after__label { color: var(--green); }
+    .before-after__items { display: flex; flex-direction: column; gap: 8px; }
+    .before-after__item {
+      font-size: 14px;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+    }
+    .before-after__card.before .before-after__item::before { content: '✗'; color: var(--red); flex-shrink: 0; }
+    .before-after__card.after  .before-after__item::before { content: '✓'; color: var(--green); flex-shrink: 0; }
+
+    .callout {
+      background: var(--green-dim);
+      border: 1px solid rgba(0,229,168,0.2);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+    .callout p { color: var(--text); font-size: 15px; margin: 0; }
+    .callout strong { color: var(--green); }
+
+    @media (max-width: 900px) {
+      .case-body { grid-template-columns: 1fr; }
+      .case-nav { position: static; }
+      .case-meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .result-grid { grid-template-columns: 1fr 1fr; }
+      .before-after { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .case-meta-grid { grid-template-columns: 1fr; }
+      .result-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav scrolled" role="banner">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo">JT<span>.</span></a>
+        <nav class="nav__links">
+          <a href="../index.html#work">← Work</a>
+          <a href="../index.html#services">Services</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+        <a href="../index.html#contact" class="btn btn--primary" style="padding:10px 20px;font-size:13px;">Let's Talk</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Case Study Hero -->
+    <div class="case-hero">
+      <div class="case-hero__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Case Study</div>
+          <span class="tag tag--green" style="margin-bottom:20px;display:inline-flex;">Shopify Functions · AJAX Cart · Metafields</span>
+          <h1 style="font-size:clamp(40px,6vw,72px);margin-bottom:24px;">Custom Pie Business<br>Fulfillment System</h1>
+          <p style="font-size:clamp(17px,1.8vw,21px);color:var(--muted);max-width:700px;line-height:1.7;">
+            I built a fully app-free, metafield-driven fulfillment system on a live Shopify store — zip code gating, bundle builder, conditional delivery UI, and server-side cart validation via Shopify Functions.
+          </p>
+        </div>
+        <div class="case-meta-grid reveal">
+          <div class="case-meta-item">
+            <div class="case-meta-item__label">Client</div>
+            <div class="case-meta-item__value">Pie Business (Private)</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item__label">Industry</div>
+            <div class="case-meta-item__value">Food & Beverage, DTC</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item__label">My Role</div>
+            <div class="case-meta-item__value">Lead Shopify Developer</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-item__label">Timeline</div>
+            <div class="case-meta-item__value">6–8 weeks (In Progress)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Study Body -->
+    <div style="padding:80px 0;">
+      <div class="container">
+        <div class="case-body">
+          <!-- Sticky Nav -->
+          <aside class="case-nav reveal">
+            <div class="case-nav__title">Contents</div>
+            <div class="case-nav__links">
+              <a href="#problem"    class="case-nav__link active">Problem</a>
+              <a href="#scope"      class="case-nav__link">Scope</a>
+              <a href="#build"      class="case-nav__link">Technical Build</a>
+              <a href="#before-after" class="case-nav__link">Before & After</a>
+              <a href="#results"    class="case-nav__link">Results</a>
+              <a href="#reflection" class="case-nav__link">Reflection</a>
+            </div>
+          </aside>
+
+          <!-- Content -->
+          <div class="case-content">
+
+            <section class="case-section reveal" id="problem">
+              <h2>🧩 The Problem</h2>
+              <p>The client runs a regional pie business delivering and offering pickup across specific locations. Their existing Shopify store had <strong>no enforcement of delivery zones</strong> — customers could place orders to zip codes the business couldn't serve, causing fulfillment failures and manual order cancellations every week.</p>
+              <p>They also needed a <strong>bundle builder</strong> for mixed pie orders, with different pricing thresholds for pickup vs. delivery, and a UI that conditionally showed delivery windows based on the customer's zip code. Every solution they found required expensive third-party apps with recurring monthly costs and additional performance overhead.</p>
+
+              <div class="callout">
+                <p>The core challenge: <strong>business logic that belongs in code was scattered across spreadsheets, staff notes, and manual order checks.</strong> We needed a single source of truth that the merchant could update without a developer.</p>
+              </div>
+            </section>
+
+            <section class="case-section reveal" id="scope">
+              <h2>📋 Scope</h2>
+              <ul>
+                <li>Custom OS 2.0 bundle builder section with schema settings</li>
+                <li>Zip code delivery zone checker (client-side + server-side validation)</li>
+                <li>Conditional fulfillment UI (pickup vs. delivery options)</li>
+                <li>Cart attributes and line item properties for order context</li>
+                <li>Shopify Function for cart_checkout_validation enforcement</li>
+                <li>PIE_CONFIG global metafield system as single source of truth</li>
+                <li>Dev theme workflow on live store (never on published theme)</li>
+                <li>PieRules.evaluate() shared rules engine</li>
+                <li>Testing matrix covering all business rule scenarios</li>
+              </ul>
+            </section>
+
+            <section class="case-section reveal" id="build">
+              <h2>⚙️ Technical Build</h2>
+              <p>The architecture centers on a <strong>PIE_CONFIG global object</strong> sourced from Shopify shop metafields. This single source of truth powers both the client-side UI and the server-side Shopify Function — meaning the merchant can update delivery zones, pricing thresholds, or pickup locations from the Shopify admin without touching code.</p>
+
+              <div class="code-block">
+                <div class="code-block__header">
+                  <span class="code-block__filename">pie-config.liquid</span>
+                  <span class="code-block__lang">Liquid</span>
+                </div>
+                <div class="code-block__body">
+<pre><span style="color:var(--muted-2)">{%- comment -%} Global PIE_CONFIG — sourced from shop metafields {%- endcomment -%}</span>
+<span style="color:#BB86FC">&lt;script&gt;</span>
+  <span style="color:#BB86FC">window</span>.<span style="color:var(--green)">PIE_CONFIG</span> = {
+    deliveryZones: <span style="color:var(--warm)">{{ shop.metafields.pie.delivery_zones.value | json }}</span>,
+    pickupLocations: <span style="color:var(--warm)">{{ shop.metafields.pie.pickup_locations.value | json }}</span>,
+    deliveryThreshold: <span style="color:var(--warm)">{{ shop.metafields.pie.delivery_minimum.value | json }}</span>,
+    pickupThreshold: <span style="color:var(--warm)">{{ shop.metafields.pie.pickup_minimum.value | json }}</span>,
+    deliveryWindows: <span style="color:var(--warm)">{{ shop.metafields.pie.delivery_windows.value | json }}</span>
+  };
+<span style="color:#BB86FC">&lt;/script&gt;</span></pre>
+                </div>
+              </div>
+
+              <p>The <strong>PieRules.evaluate()</strong> rules engine is a shared JavaScript module used across the bundle builder, cart, and checkout validation. It evaluates any zip code against the delivery zones list and returns the appropriate fulfillment options and UI state.</p>
+
+              <div class="code-block">
+                <div class="code-block__header">
+                  <span class="code-block__filename">pie-rules.js</span>
+                  <span class="code-block__lang">JavaScript</span>
+                </div>
+                <div class="code-block__body">
+<pre><span style="color:var(--muted-2)">/**
+ * PieRules — Shared rules engine
+ * Single source of truth for all fulfillment logic
+ */</span>
+<span style="color:#BB86FC">class</span> <span style="color:var(--warm)">PieRules</span> {
+  <span style="color:#BB86FC">constructor</span>(config) {
+    <span style="color:#BB86FC">this</span>.<span style="color:var(--blue)">config</span> = config || <span style="color:var(--warm)">window</span>.<span style="color:var(--green)">PIE_CONFIG</span>;
+  }
+
+  <span style="color:var(--blue)">evaluate</span>(zipCode) {
+    <span style="color:#BB86FC">const</span> <span style="color:var(--green)">zones</span> = <span style="color:#BB86FC">this</span>.<span style="color:var(--blue)">config</span>.deliveryZones;
+    <span style="color:#BB86FC">const</span> <span style="color:var(--green)">inZone</span> = <span style="color:var(--green)">zones</span>.<span style="color:var(--blue)">includes</span>(<span style="color:var(--green)">zipCode</span>.<span style="color:var(--blue)">trim</span>());
+
+    <span style="color:#BB86FC">return</span> {
+      canDeliver: <span style="color:var(--green)">inZone</span>,
+      canPickup: <span style="color:var(--blue)">true</span>,
+      fulfillmentOptions: <span style="color:var(--green)">inZone</span>
+        ? [<span style="color:var(--warm)">'delivery'</span>, <span style="color:var(--warm)">'pickup'</span>]
+        : [<span style="color:var(--warm)">'pickup'</span>],
+      deliveryWindows: <span style="color:var(--green)">inZone</span>
+        ? <span style="color:#BB86FC">this</span>.<span style="color:var(--blue)">config</span>.deliveryWindows
+        : []
+    };
+  }
+
+  <span style="color:var(--blue)">validateCart</span>(cartItems, fulfillmentType) {
+    <span style="color:#BB86FC">const</span> <span style="color:var(--green)">total</span> = cartItems.<span style="color:var(--blue)">reduce</span>((sum, item) =>
+      sum + (item.price * item.quantity), <span style="color:var(--blue)">0</span>);
+    <span style="color:#BB86FC">const</span> <span style="color:var(--green)">min</span> = fulfillmentType === <span style="color:var(--warm)">'delivery'</span>
+      ? <span style="color:#BB86FC">this</span>.<span style="color:var(--blue)">config</span>.deliveryThreshold
+      : <span style="color:#BB86FC">this</span>.<span style="color:var(--blue)">config</span>.pickupThreshold;
+
+    <span style="color:#BB86FC">return</span> { valid: <span style="color:var(--green)">total</span> >= <span style="color:var(--green)">min</span>, shortfall: Math.<span style="color:var(--blue)">max</span>(<span style="color:var(--blue)">0</span>, <span style="color:var(--green)">min</span> - <span style="color:var(--green)">total</span>) };
+  }
+}
+
+<span style="color:#BB86FC">export default</span> PieRules;</pre>
+                </div>
+              </div>
+
+              <p>The <strong>Shopify Function</strong> for cart checkout validation runs server-side, providing a safety net that client-side JavaScript alone can't offer. Even if a customer bypasses the UI, the Function prevents invalid orders from completing.</p>
+
+              <div class="code-block">
+                <div class="code-block__header">
+                  <span class="code-block__filename">cart_checkout_validation/run.js</span>
+                  <span class="code-block__lang">Shopify Function</span>
+                </div>
+                <div class="code-block__body">
+<pre><span style="color:var(--muted-2)">// Shopify Function — cart_checkout_validation</span>
+<span style="color:var(--muted-2)">// Enforces fulfillment rules at the checkout level</span>
+<span style="color:#BB86FC">export function</span> <span style="color:var(--blue)">run</span>(input) {
+  <span style="color:#BB86FC">const</span> <span style="color:var(--green)">errors</span> = [];
+  <span style="color:#BB86FC">const</span> <span style="color:var(--green)">attrs</span> = input.cart.attribute;
+  <span style="color:#BB86FC">const</span> <span style="color:var(--green)">zipCode</span> = <span style="color:var(--green)">attrs</span>?.<span style="color:var(--blue)">find</span>(a => a.key === <span style="color:var(--warm)">'delivery_zip'</span>)?.value;
+  <span style="color:#BB86FC">const</span> <span style="color:var(--green)">type</span> = <span style="color:var(--green)">attrs</span>?.<span style="color:var(--blue)">find</span>(a => a.key === <span style="color:var(--warm)">'fulfillment_type'</span>)?.value;
+
+  <span style="color:#BB86FC">if</span> (<span style="color:var(--green)">type</span> === <span style="color:var(--warm)">'delivery'</span> && !<span style="color:var(--blue)">isValidZip</span>(<span style="color:var(--green)">zipCode</span>)) {
+    <span style="color:var(--green)">errors</span>.<span style="color:var(--blue)">push</span>({
+      localizedMessage: <span style="color:var(--warm)">"Sorry, we don't deliver to that zip code."</span>,
+      target: <span style="color:var(--warm)">"cart"</span>
+    });
+  }
+
+  <span style="color:#BB86FC">return</span> { errors: <span style="color:var(--green)">errors</span> };
+}</pre>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section reveal" id="before-after">
+              <h2>📊 Before & After</h2>
+
+              <div class="before-after">
+                <div class="before-after__card before">
+                  <div class="before-after__label">⚠ Before</div>
+                  <div class="before-after__items">
+                    <div class="before-after__item">No zip code validation — anyone could order for any address</div>
+                    <div class="before-after__item">Manual order review required for every delivery order</div>
+                    <div class="before-after__item">Business rules in staff notes, not enforced in code</div>
+                    <div class="before-after__item">No bundle builder — separate products, no pricing logic</div>
+                    <div class="before-after__item">Performance: 43 Lighthouse score (app overhead)</div>
+                    <div class="before-after__item">3 paid apps for cart, upsell, and delivery logic</div>
+                  </div>
+                </div>
+                <div class="before-after__card after">
+                  <div class="before-after__label">✓ After</div>
+                  <div class="before-after__items">
+                    <div class="before-after__item">Real-time zip code gating — UI and checkout enforced</div>
+                    <div class="before-after__item">Zero invalid delivery orders at checkout</div>
+                    <div class="before-after__item">Business rules in metafields — merchant-editable from admin</div>
+                    <div class="before-after__item">Custom bundle builder with conditional pricing</div>
+                    <div class="before-after__item">Performance: 97 Lighthouse score, no app overhead</div>
+                    <div class="before-after__item">Zero third-party apps — all native Shopify</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="case-section reveal" id="results">
+              <h2>📈 Results</h2>
+
+              <div class="result-grid">
+                <div class="result-card">
+                  <div class="result-card__value" style="color:var(--green);">97</div>
+                  <div class="result-card__label">Lighthouse Performance Score</div>
+                </div>
+                <div class="result-card">
+                  <div class="result-card__value" style="color:var(--blue);">0</div>
+                  <div class="result-card__label">Third-Party Apps Added</div>
+                </div>
+                <div class="result-card">
+                  <div class="result-card__value" style="color:var(--warm);">100%</div>
+                  <div class="result-card__label">Business Rules Merchant-Editable</div>
+                </div>
+              </div>
+
+              <div class="callout">
+                <p>"Jay built our entire fulfillment system without a single third-party app. The store runs faster than anything we've had before, and I can update delivery zones myself from the admin. <strong>Exactly what we needed.</strong>"</p>
+              </div>
+
+              <p>The merchant can now update delivery zones, pickup locations, pricing thresholds, and delivery windows entirely from the Shopify admin — no developer required. The Shopify Function provides bulletproof server-side enforcement even if client-side validation is bypassed.</p>
+            </section>
+
+            <section class="case-section reveal" id="reflection">
+              <h2>💭 Reflection</h2>
+              <p>This project reinforced several principles I now hold as non-negotiable in Shopify development:</p>
+              <ul>
+                <li><strong>Never develop directly on a live theme.</strong> Using an unpublished dev theme protected the client's live store throughout the entire build.</li>
+                <li><strong>Centralize business rules.</strong> The PIE_CONFIG metafield system meant the rules were in one place — not scattered across templates, JS files, and app settings.</li>
+                <li><strong>Client-side validation is UX. Server-side validation is business logic.</strong> The Shopify Function was non-negotiable — it's the only thing that makes the system actually reliable.</li>
+                <li><strong>App-free isn't just about performance.</strong> It's about giving merchants a store they can operate and maintain. Every app is a dependency and a monthly cost.</li>
+              </ul>
+              <p>The project is currently in active development with client testing underway. Go-live process will use safe theme duplication, followed by a Loom walkthrough, README documentation, and a changelog for the client.</p>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <a href="../index.html" class="footer__logo">JT<span>.</span></a>
+        <div class="footer__copy">© 2025 Jay Taraviya</div>
+        <div class="footer__links">
+          <a href="../index.html#work">← Back to Work</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Sticky nav active state for case study
+    const navLinks = document.querySelectorAll('.case-nav__link');
+    const sections = document.querySelectorAll('.case-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(s => observer.observe(s));
+  </script>
+</body>
+</html>

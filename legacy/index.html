@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jay Taraviya — Shopify & eCommerce Frontend Developer</title>
+  <meta name="description" content="Shopify Liquid Developer specializing in Online Store 2.0, custom sections, Figma-to-Shopify builds, and performance-first eCommerce experiences. Based in Rajkot, Gujarat, India." />
+  <meta name="keywords" content="Shopify Developer, Shopify Liquid Developer, Shopify Theme Developer, Online Store 2.0, Figma to Shopify, eCommerce Frontend Developer, Shopify Performance Optimization" />
+  <meta name="author" content="Jay Taraviya" />
+  <meta property="og:title" content="Jay Taraviya — Shopify Developer" />
+  <meta property="og:description" content="I build fast, editable, conversion-focused Shopify storefronts with Liquid, OS 2.0 sections, and performance-first UX." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jaytaraviya.dev" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>⚡</text></svg>" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-menu__close" aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="/" class="nav__logo" aria-label="Jay Taraviya home">JT<span>.</span></a>
+        <nav class="nav__links" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#case-study">Case Study</a>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </nav>
+        <div class="nav__cta">
+          <a href="#contact" class="btn btn--primary" style="padding:10px 20px;font-size:13px;">
+            Let's Talk
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================== HERO ====================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__content">
+            <div class="availability">
+              <span class="availability__dot"></span>
+              Available for new projects — July 2025
+            </div>
+
+            <div class="hero__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Rajkot, Gujarat, India — IST (UTC+5:30)
+            </div>
+
+            <h1 id="hero-heading" class="hero__title">
+              Jay<br>
+              Taraviya<span class="text-green">.</span>
+            </h1>
+
+            <div class="hero__tagline">
+              <span class="typewriter" style="display:block; font-family:var(--font-mono); font-size:14px; color:var(--green); margin-bottom:12px; min-height:20px; border-right:2px solid var(--green); animation:blink 1s step-end infinite; padding-right:4px; display:inline-block;"></span>
+              <br>
+              I build <strong style="color:var(--text)">fast, editable, conversion-focused</strong> Shopify storefronts with Liquid, Online Store 2.0 sections, responsive frontend systems, and performance-first UX.
+            </div>
+
+            <div class="hero__meta">
+              <span class="hero__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                Response within 24h
+              </span>
+              <span class="hero__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.7 12.7a19.79 19.79 0 01-3.07-8.67A2 2 0 013.62 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Remote & Async-friendly
+              </span>
+              <span class="hero__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/></svg>
+                Lighthouse 95+ delivery
+              </span>
+            </div>
+
+            <div class="hero__ctas">
+              <a href="#work" class="btn btn--primary">
+                View Shopify Work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="resume.pdf" class="btn btn--outline" download>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download CV
+              </a>
+              <a href="https://linkedin.com/in/jaytaraviya" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Code window visual -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__code-window">
+              <div class="code-window__bar">
+                <span class="code-window__dot"></span>
+                <span class="code-window__dot"></span>
+                <span class="code-window__dot"></span>
+                <span class="code-window__filename">product-card.liquid</span>
+              </div>
+              <div class="code-window__body">
+<span class="code-line"><span class="code-comment">{% comment %} OS 2.0 Section Schema {% endcomment %}</span></span>
+<span class="code-line">&nbsp;</span>
+<span class="code-line"><span class="code-bracket">{%</span> <span class="code-keyword">schema</span> <span class="code-bracket">%}</span></span>
+<span class="code-line indent-1"><span class="code-bracket">{</span></span>
+<span class="code-line indent-2"><span class="code-prop">"name"</span><span class="code-bracket">:</span> <span class="code-string">"Product Highlight"</span><span class="code-bracket">,</span></span>
+<span class="code-line indent-2"><span class="code-prop">"settings"</span><span class="code-bracket">: [</span></span>
+<span class="code-line indent-2" style="padding-left:4.5em"><span class="code-bracket">{</span></span>
+<span class="code-line indent-2" style="padding-left:6em"><span class="code-prop">"type"</span><span class="code-bracket">:</span> <span class="code-string">"product"</span><span class="code-bracket">,</span></span>
+<span class="code-line indent-2" style="padding-left:6em"><span class="code-prop">"id"</span><span class="code-bracket">:</span> <span class="code-string">"featured_product"</span><span class="code-bracket">,</span></span>
+<span class="code-line indent-2" style="padding-left:6em"><span class="code-prop">"label"</span><span class="code-bracket">:</span> <span class="code-string">"Featured Product"</span></span>
+<span class="code-line indent-2" style="padding-left:4.5em"><span class="code-bracket">}</span></span>
+<span class="code-line indent-2"><span class="code-bracket">],</span></span>
+<span class="code-line indent-2"><span class="code-prop">"presets"</span><span class="code-bracket">: [{</span></span>
+<span class="code-line indent-2" style="padding-left:4.5em"><span class="code-prop">"name"</span><span class="code-bracket">:</span> <span class="code-string">"Product Highlight"</span></span>
+<span class="code-line indent-2"><span class="code-bracket">}]</span></span>
+<span class="code-line indent-1"><span class="code-bracket">}</span></span>
+<span class="code-line"><span class="code-bracket">{%</span> <span class="code-keyword">endschema</span> <span class="code-bracket">%}</span></span>
+<span class="code-line">&nbsp;</span>
+<span class="code-line"><span class="code-bracket">{%</span> <span class="code-keyword">assign</span> <span class="code-var">product</span> <span class="code-bracket">=</span> section<span class="code-bracket">.</span>settings<span class="code-bracket">.</span>featured_product <span class="code-bracket">%}</span></span>
+<span class="code-line"><span class="code-bracket">{%</span> <span class="code-keyword">if</span> <span class="code-var">product</span> <span class="code-bracket">%}</span></span>
+<span class="code-line indent-1"><span class="code-keyword">&lt;div</span> <span class="code-prop">class</span><span class="code-bracket">=</span><span class="code-string">"product-highlight"</span><span class="code-keyword">&gt;</span></span>
+<span class="code-line indent-2"><span class="code-value">{{ product.title | escape }}</span></span>
+<span class="code-line indent-1"><span class="code-keyword">&lt;/div&gt;</span></span>
+<span class="code-line"><span class="code-bracket">{%</span> <span class="code-keyword">endif</span> <span class="code-bracket">%}</span></span>
+              </div>
+            </div>
+
+            <!-- Floating stat cards -->
+            <div class="hero__stats">
+              <div class="hero__stat-card">
+                <div class="hero__stat-icon">⚡</div>
+                <div>
+                  <div class="hero__stat-value">97</div>
+                  <div class="hero__stat-label">Lighthouse Score</div>
+                </div>
+              </div>
+              <div class="hero__stat-card">
+                <div class="hero__stat-icon">🛒</div>
+                <div>
+                  <div class="hero__stat-value">15+</div>
+                  <div class="hero__stat-label">Stores Built</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== TRUST STRIP ====================== -->
+    <div class="trust" aria-label="Technologies and skills">
+      <div class="container">
+        <p class="trust__label">Core Technologies</p>
+      </div>
+      <div style="overflow:hidden; position:relative;">
+        <div class="trust__scroll" aria-hidden="true">
+          <span class="trust__item"><span class="trust__item-dot"></span>Shopify Liquid</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Online Store 2.0</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Shopify CLI</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Dawn Theme</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Figma → Shopify</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>JavaScript</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>React</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Tailwind CSS</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>AJAX Cart API</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Metafields</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Shopify Functions</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Core Web Vitals</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Performance CRO</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Git</span>
+          <span class="trust__item"><span class="trust__item-dot"></span>Sections & Blocks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================== WORK ====================== -->
+    <section id="work" aria-labelledby="work-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Selected Work</div>
+          <h2 id="work-heading">Shopify Stores<br>Built to Convert</h2>
+          <p>Production-grade Shopify builds — each one engineered for speed, merchant editability, and conversion performance.</p>
+        </div>
+
+        <div class="work-grid">
+          <!-- Card 1 — Large -->
+          <article class="work-card work-card--large reveal">
+            <div class="work-card__preview">
+              <div class="work-card__preview-bg preview--green">
+                <span class="work-card__preview-icon">🥧</span>
+              </div>
+              <div class="work-card__overlay">
+                <a href="case-studies/pie-fulfillment.html" class="btn btn--primary" style="font-size:13px;padding:10px 20px;">
+                  View Case Study
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#" class="btn btn--outline" style="font-size:13px;padding:10px 20px;" target="_blank" rel="noopener noreferrer">
+                  Live Store ↗
+                </a>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__tags">
+                <span class="tag tag--green">Shopify Functions</span>
+                <span class="tag tag--warm">Custom Fulfillment</span>
+                <span class="tag tag--blue">AJAX Cart</span>
+              </div>
+              <h3 class="work-card__title">Pie Business Custom Fulfillment System</h3>
+              <p class="work-card__desc">Built a complex fulfillment system from scratch — zip code gating, bundle builder, conditional delivery UX, server-side cart validation via Shopify Functions. No third-party apps.</p>
+              <div class="work-card__metrics">
+                <div class="work-card__metric">
+                  <div class="work-card__metric-value">0</div>
+                  <div class="work-card__metric-label">Third-party apps</div>
+                </div>
+                <div class="work-card__metric">
+                  <div class="work-card__metric-value">100%</div>
+                  <div class="work-card__metric-label">Native Shopify</div>
+                </div>
+                <div class="work-card__metric">
+                  <div class="work-card__metric-value">97</div>
+                  <div class="work-card__metric-label">Lighthouse</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 — Small -->
+          <article class="work-card work-card--small reveal reveal-delay-1">
+            <div class="work-card__preview">
+              <div class="work-card__preview-bg preview--blue">
+                <span class="work-card__preview-icon">👗</span>
+              </div>
+              <div class="work-card__overlay">
+                <a href="#" class="btn btn--primary" style="font-size:13px;padding:10px 20px;">Live Store ↗</a>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__tags">
+                <span class="tag tag--green">OS 2.0</span>
+                <span class="tag tag--blue">Figma → Shopify</span>
+              </div>
+              <h3 class="work-card__title">Fashion Brand — Pixel-Perfect Figma Build</h3>
+              <p class="work-card__desc">Full Figma-to-Shopify implementation with custom OS 2.0 sections, metafield-driven product specs, and responsive design system.</p>
+              <div class="work-card__metrics">
+                <div class="work-card__metric">
+                  <div class="work-card__metric-value">94</div>
+                  <div class="work-card__metric-label">Performance</div>
+                </div>
+                <div class="work-card__metric">
+                  <div class="work-card__metric-value">12</div>
+                  <div class="work-card__metric-label">Custom sections</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 — Third -->
+          <article class="work-card work-card--third reveal reveal-delay-1">
+            <div class="work-card__preview" style="height:200px;">
+              <div class="work-card__preview-bg preview--warm">
+                <span class="work-card__preview-icon" style="font-size:60px;">🍕</span>
+              </div>
+              <div class="work-card__overlay">
+                <a href="#" class="btn btn--primary" style="font-size:13px;padding:10px 20px;">Live Store ↗</a>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__tags">
+                <span class="tag tag--warm">PDP Optimization</span>
+              </div>
+              <h3 class="work-card__title" style="font-size:17px;">Food Brand PDP Rebuild</h3>
+              <p class="work-card__desc" style="font-size:13px;">Converted slow, app-dependent PDP into a lean, metafield-driven product page. Removed 3 apps.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 — Third -->
+          <article class="work-card work-card--third reveal reveal-delay-2">
+            <div class="work-card__preview" style="height:200px;">
+              <div class="work-card__preview-bg preview--purple">
+                <span class="work-card__preview-icon" style="font-size:60px;">💄</span>
+              </div>
+              <div class="work-card__overlay">
+                <a href="#" class="btn btn--primary" style="font-size:13px;padding:10px 20px;">Live Store ↗</a>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__tags">
+                <span class="tag tag--blue">Cart Optimization</span>
+              </div>
+              <h3 class="work-card__title" style="font-size:17px;">Beauty Store — Cart Drawer UX</h3>
+              <p class="work-card__desc" style="font-size:13px;">Custom AJAX cart drawer with upsell logic, gift messaging, and progress bar — no app required.</p>
+            </div>
+          </article>
+
+          <!-- Card 5 — Third -->
+          <article class="work-card work-card--third reveal reveal-delay-3">
+            <div class="work-card__preview" style="height:200px;">
+              <div class="work-card__preview-bg preview--teal">
+                <span class="work-card__preview-icon" style="font-size:60px;">⚡</span>
+              </div>
+              <div class="work-card__overlay">
+                <a href="#" class="btn btn--primary" style="font-size:13px;padding:10px 20px;">View Project ↗</a>
+              </div>
+            </div>
+            <div class="work-card__body">
+              <div class="work-card__tags">
+                <span class="tag tag--green">Performance</span>
+              </div>
+              <h3 class="work-card__title" style="font-size:17px;">Performance Audit & Rebuild</h3>
+              <p class="work-card__desc" style="font-size:13px;">Took a client store from 43 to 91 Lighthouse score. Eliminated render-blocking, lazy-loaded images, split JS bundles.</p>
+            </div>
+          </article>
+
+          <div style="grid-column: span 12; text-align:center; padding-top:16px;" class="reveal">
+            <a href="pages/work.html" class="btn btn--outline">
+              View All Projects
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== CASE STUDY PREVIEW ====================== -->
+    <section id="case-study" aria-labelledby="case-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Featured Case Study</div>
+          <h2 id="case-heading">A Fulfillment System<br>Built Without Apps</h2>
+        </div>
+
+        <div class="case-study-preview reveal">
+          <div class="case-study-preview__inner">
+            <div class="case-study-preview__content">
+              <div class="case-study-preview__client">Pie Business — eCommerce Fulfillment</div>
+              <h3 class="case-study-preview__title">Custom Pie Delivery & Pickup System on Dawn Theme</h3>
+
+              <div class="case-study-preview__items">
+                <div class="case-study-preview__item">
+                  <h4>🧩 Problem</h4>
+                  <p>Client needed complex fulfillment logic — zip code gating, bundle building, conditional pickup vs. delivery UX — without third-party apps that would slow the store and add recurring costs.</p>
+                </div>
+                <div class="case-study-preview__item">
+                  <h4>⚙️ Solution</h4>
+                  <p>Built a <code style="font-family:var(--font-mono);font-size:13px;color:var(--green);background:var(--green-dim);padding:2px 6px;border-radius:4px;">PIE_CONFIG</code> global metafield system as single source of truth, a PieRules.evaluate() rules engine, AJAX Cart API integration, and a <code style="font-family:var(--font-mono);font-size:13px;color:var(--blue);background:var(--blue-dim);padding:2px 6px;border-radius:4px;">cart_checkout_validation</code> Shopify Function for server-side enforcement.</p>
+                </div>
+                <div class="case-study-preview__item">
+                  <h4>📊 Result</h4>
+                  <p>Zero third-party app dependencies. Merchant-editable business rules via metafields. 97 Lighthouse performance score on live store.</p>
+                </div>
+              </div>
+
+              <div class="case-study-preview__results">
+                <div>
+                  <div class="case-study-preview__result-value">97</div>
+                  <div class="case-study-preview__result-label">Lighthouse Score</div>
+                </div>
+                <div>
+                  <div class="case-study-preview__result-value">0</div>
+                  <div class="case-study-preview__result-label">Apps Added</div>
+                </div>
+                <div>
+                  <div class="case-study-preview__result-value">100%</div>
+                  <div class="case-study-preview__result-label">Merchant-Editable</div>
+                </div>
+              </div>
+
+              <a href="case-studies/pie-fulfillment.html" class="btn btn--primary" style="margin-top:32px; width:fit-content;">
+                Read Full Case Study
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <div class="case-study-preview__visual">
+              <div style="padding:40px;width:100%;display:flex;flex-direction:column;gap:16px;">
+                <!-- Code snippet preview -->
+                <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;">
+                  <div style="padding:10px 16px;background:var(--surface-2);border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:11px;color:var(--muted-2);display:flex;align-items:center;gap:8px;">
+                    <span style="width:10px;height:10px;border-radius:50%;background:#FF6058;"></span>
+                    <span style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;"></span>
+                    <span style="width:10px;height:10px;border-radius:50%;background:#28CA41;"></span>
+                    <span style="margin-left:8px;">pie-rules.js</span>
+                  </div>
+                  <div style="padding:20px;font-family:var(--font-mono);font-size:12px;line-height:1.8;">
+                    <span style="color:var(--muted-2)">// Single source of truth</span><br>
+                    <span style="color:#BB86FC">const</span> <span style="color:var(--green)">PIE_CONFIG</span> <span style="color:var(--muted)">=</span> <span style="color:var(--warm)">window</span><span style="color:var(--muted)">.</span><span style="color:var(--blue)">PIE_CONFIG</span><span style="color:var(--muted)">;</span><br><br>
+                    <span style="color:#BB86FC">class</span> <span style="color:var(--warm)">PieRules</span> <span style="color:var(--muted)">{</span><br>
+                    &nbsp;&nbsp;<span style="color:var(--blue)">evaluate</span><span style="color:var(--muted)">(</span><span style="color:var(--green)">zipCode</span><span style="color:var(--muted)">)</span> <span style="color:var(--muted)">{</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#BB86FC">return</span> <span style="color:var(--green)">PIE_CONFIG</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--muted)">.</span><span style="color:var(--blue)">deliveryZones</span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--muted)">.</span><span style="color:var(--blue)">includes</span><span style="color:var(--muted)">(</span><span style="color:var(--green)">zipCode</span><span style="color:var(--muted)">);</span><br>
+                    &nbsp;&nbsp;<span style="color:var(--muted)">}</span><br>
+                    <span style="color:var(--muted)">}</span>
+                  </div>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                  <div style="background:var(--green-dim);border:1px solid rgba(0,229,168,0.2);border-radius:10px;padding:16px;text-align:center;">
+                    <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--green);">97</div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:4px;">Performance</div>
+                  </div>
+                  <div style="background:var(--blue-dim);border:1px solid rgba(91,124,250,0.2);border-radius:10px;padding:16px;text-align:center;">
+                    <div style="font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--blue);">0ms</div>
+                    <div style="font-size:12px;color:var(--muted);margin-top:4px;">App overhead</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== SECTION BUILDER DEMO ====================== -->
+    <section id="demo" aria-labelledby="demo-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Interactive Demo</div>
+          <h2 id="demo-heading">Shopify Section<br>Schema Builder</h2>
+          <p>Toggle schema settings and watch the product card update in real time — exactly how Shopify Theme Editor works under the hood.</p>
+        </div>
+
+        <div class="demo-section reveal">
+          <div class="demo-grid">
+            <div class="demo-controls">
+              <div class="demo-control">
+                <div class="demo-control__label">Section Schema Settings</div>
+                <div class="demo-toggle-group">
+                  <label class="demo-toggle">
+                    <input type="checkbox" id="toggle-desc" checked>
+                    <span class="demo-toggle__switch"></span>
+                    show_description
+                  </label>
+                  <label class="demo-toggle">
+                    <input type="checkbox" id="toggle-reviews" checked>
+                    <span class="demo-toggle__switch"></span>
+                    show_reviews
+                  </label>
+                  <label class="demo-toggle">
+                    <input type="checkbox" id="toggle-badge">
+                    <span class="demo-toggle__switch"></span>
+                    show_sale_badge
+                  </label>
+                  <label class="demo-toggle">
+                    <input type="checkbox" id="toggle-colors" checked>
+                    <span class="demo-toggle__switch"></span>
+                    show_color_swatches
+                  </label>
+                </div>
+              </div>
+              <div class="demo-control" style="background:var(--bg);border-color:var(--border);">
+                <div class="demo-control__label">Generated Liquid</div>
+                <div style="font-family:var(--font-mono);font-size:11px;line-height:1.7;color:var(--muted-2);">
+                  <span style="color:#BB86FC">{%</span> <span style="color:var(--green)">if</span> section<span style="color:var(--muted)">.</span>settings<span style="color:var(--muted)">.</span><span style="color:var(--blue)">show_description</span> <span style="color:#BB86FC">%}</span><br>
+                  &nbsp;&nbsp;<span style="color:var(--warm)">{{ product.description }}</span><br>
+                  <span style="color:#BB86FC">{%</span> <span style="color:var(--green)">endif</span> <span style="color:#BB86FC">%}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo-preview">
+              <div class="demo-preview__section">
+                <div class="demo-product-card">
+                  <div class="demo-product-img">🛍️</div>
+                  <div class="demo-product-body">
+                    <div class="demo-product-badge tag tag--warm">Sale</div>
+                    <div class="demo-product-title">Artisan Product Bundle</div>
+                    <div class="demo-product-reviews">⭐⭐⭐⭐⭐ 4.9 (128 reviews)</div>
+                    <div class="demo-product-price">$49.00 <span style="color:var(--muted-2);font-size:14px;text-decoration:line-through;font-weight:400;">$69.00</span></div>
+                    <div class="demo-product-desc">Premium hand-crafted product with metafield-driven specifications. Fully editable from the Shopify admin.</div>
+                    <div class="demo-product-swatches">
+                      <div class="demo-product-swatch" style="background:#00E5A8;" title="Green"></div>
+                      <div class="demo-product-swatch" style="background:#FFB86B;" title="Warm"></div>
+                      <div class="demo-product-swatch" style="background:#5B7CFA;" title="Blue"></div>
+                      <div class="demo-product-swatch" style="background:#F4F7FA;" title="White"></div>
+                    </div>
+                    <button class="demo-product-btn">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== SERVICES ====================== -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">What I Build</div>
+          <h2 id="services-heading">Shopify Development<br>Services</h2>
+          <p>Precise, performant, app-free builds — the kind of work that survives theme updates and merchant edits.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-card__icon">🏗️</div>
+            <h3 class="service-card__title">Custom Shopify Sections</h3>
+            <p class="service-card__desc">OS 2.0 sections with full schema settings, blocks, and presets. Built to be edited by non-developers in the Theme Editor without breaking anything.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">Schema settings & block architecture</span>
+              <span class="service-card__feature">Preset configuration</span>
+              <span class="service-card__feature">Metafield integration</span>
+              <span class="service-card__feature">Mobile-responsive by default</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-card__icon">🎨</div>
+            <h3 class="service-card__title">Figma → Shopify Builds</h3>
+            <p class="service-card__desc">Pixel-accurate Shopify implementation from any design file. I translate Figma designs into clean, maintainable Liquid + CSS — no template hacks.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">Pixel-perfect implementation</span>
+              <span class="service-card__feature">Design token → CSS variable mapping</span>
+              <span class="service-card__feature">Responsive across all breakpoints</span>
+              <span class="service-card__feature">Component-based architecture</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-card__icon">🛒</div>
+            <h3 class="service-card__title">Cart & PDP Improvements</h3>
+            <p class="service-card__desc">Custom AJAX cart drawers, variant selectors, sticky ATCs, upsells, and product page flows — engineered for conversion without adding apps.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">AJAX cart drawer & mini-cart</span>
+              <span class="service-card__feature">Sticky Add to Cart bar</span>
+              <span class="service-card__feature">Custom variant selector UI</span>
+              <span class="service-card__feature">Cart attributes & line item props</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-1">
+            <div class="service-card__icon">⚡</div>
+            <h3 class="service-card__title">Performance Optimization</h3>
+            <p class="service-card__desc">Lighthouse audits, render-blocking elimination, image optimization, lazy loading, JS splitting — the technical work that moves Core Web Vitals into the green.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">Lighthouse audit & remediation</span>
+              <span class="service-card__feature">Core Web Vitals optimization</span>
+              <span class="service-card__feature">Image format & lazy-load strategy</span>
+              <span class="service-card__feature">Third-party app removal</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-2">
+            <div class="service-card__icon">🔧</div>
+            <h3 class="service-card__title">Theme Customization</h3>
+            <p class="service-card__desc">Extend Dawn, Debut, or any Shopify theme with custom sections, design overrides, and business-logic features — without forking the theme into unmaintainability.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">Dawn / OS 2.0 theme extension</span>
+              <span class="service-card__feature">CSS architecture & design tokens</span>
+              <span class="service-card__feature">Feature flagging via settings</span>
+              <span class="service-card__feature">Safe dev theme workflow</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal reveal-delay-3">
+            <div class="service-card__icon">🔌</div>
+            <h3 class="service-card__title">Integrations & Functions</h3>
+            <p class="service-card__desc">Shopify Functions for cart validation, custom discount logic, metafield-driven dynamic content — backend-grade features built with native Shopify tooling.</p>
+            <div class="service-card__features">
+              <span class="service-card__feature">Shopify Functions (cart validation)</span>
+              <span class="service-card__feature">Metafields & metaobjects</span>
+              <span class="service-card__feature">Webhook & API integrations</span>
+              <span class="service-card__feature">Custom fulfillment flows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== TECH STACK ====================== -->
+    <section id="tech" aria-labelledby="tech-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Tech Stack</div>
+          <h2 id="tech-heading">Tools of the Trade</h2>
+          <p>A precise stack — chosen for what works in production Shopify development, not what's trendy.</p>
+        </div>
+
+        <div class="tech-groups">
+          <div class="tech-group reveal">
+            <div class="tech-group__header">
+              <div class="tech-group__icon" style="background:var(--green-dim);color:var(--green);">🛒</div>
+              <span class="tech-group__title">Shopify Platform</span>
+            </div>
+            <div class="tech-group__items">
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Shopify Liquid</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Online Store 2.0</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Shopify CLI</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Shopify Functions</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Metafields & Metaobjects</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>AJAX Cart API</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--green);"></span>Dawn Theme</div>
+            </div>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-1">
+            <div class="tech-group__header">
+              <div class="tech-group__icon" style="background:var(--blue-dim);color:var(--blue);">💻</div>
+              <span class="tech-group__title">Frontend</span>
+            </div>
+            <div class="tech-group__items">
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>JavaScript (ES2022+)</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>React</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>Tailwind CSS</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>CSS Custom Properties</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>HTML5 Semantics</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>SCSS / CSS Modules</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--blue);"></span>Responsive Design</div>
+            </div>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-2">
+            <div class="tech-group__header">
+              <div class="tech-group__icon" style="background:var(--warm-dim);color:var(--warm);">📊</div>
+              <span class="tech-group__title">Performance & CRO</span>
+            </div>
+            <div class="tech-group__items">
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>Lighthouse Audits</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>Core Web Vitals</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>WebPageTest</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>Image Optimization</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>Lazy Loading</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>A/B Testing</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--warm);"></span>Google Analytics 4</div>
+            </div>
+          </div>
+
+          <div class="tech-group reveal reveal-delay-3">
+            <div class="tech-group__header">
+              <div class="tech-group__icon" style="background:rgba(255,255,255,0.05);color:var(--muted);">🛠️</div>
+              <span class="tech-group__title">Tools & Workflow</span>
+            </div>
+            <div class="tech-group__items">
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Git & GitHub</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Figma</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>VS Code</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Shopify Partner Account</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Loom</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Notion</div>
+              <div class="tech-item"><span class="tech-item__dot" style="background:var(--muted);"></span>Linear</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== PROCESS ====================== -->
+    <section id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-header reveal" style="text-align:center;align-items:center;">
+          <div class="section-label" style="justify-content:center;">How I Work</div>
+          <h2 id="process-heading">From Scope to<br>Smooth Launch</h2>
+          <p style="margin:0 auto;">A repeatable, professional process that keeps projects on track and clients informed at every stage.</p>
+        </div>
+
+        <div class="process-steps reveal">
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">01</span>
+              <span class="process-step__icon">🔍</span>
+            </div>
+            <div class="process-step__name">Audit</div>
+            <div class="process-step__desc">Understand existing store, performance baseline, business rules</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">02</span>
+              <span class="process-step__icon">🎨</span>
+            </div>
+            <div class="process-step__name">Design Handoff</div>
+            <div class="process-step__desc">Review Figma files, extract tokens, confirm responsive behavior</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">03</span>
+              <span class="process-step__icon">⚙️</span>
+            </div>
+            <div class="process-step__name">Liquid Build</div>
+            <div class="process-step__desc">Dev theme on live store, Git version control, feature flagged</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">04</span>
+              <span class="process-step__icon">✅</span>
+            </div>
+            <div class="process-step__name">QA</div>
+            <div class="process-step__desc">Full device matrix testing, Lighthouse audit, business rule matrix</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">05</span>
+              <span class="process-step__icon">🚀</span>
+            </div>
+            <div class="process-step__name">Launch</div>
+            <div class="process-step__desc">Safe theme duplication, Loom walkthrough, README handoff</div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__num">
+              <span class="process-step__num-text">06</span>
+              <span class="process-step__icon">📈</span>
+            </div>
+            <div class="process-step__name">Optimization</div>
+            <div class="process-step__desc">Post-launch monitoring, CRO iteration, ongoing support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== TESTIMONIALS & RESULTS ====================== -->
+    <section id="results" aria-labelledby="results-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Results & Testimonials</div>
+          <h2 id="results-heading">Proof Over Promises</h2>
+          <p>Real metrics and real client feedback — not polished marketing copy.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">Jay built our entire fulfillment system without a single third-party app. The store runs faster than anything we've had before, and I can update delivery zones myself from the admin. Exactly what I needed.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:var(--green-dim);color:var(--green);">SC</div>
+              <div>
+                <div class="testimonial-card__name">Sarah C.</div>
+                <div class="testimonial-card__role">Pie Business Owner</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">Our Figma design came to life exactly as intended. The sections are editable by our team in Theme Editor — no developer needed for content changes. The attention to detail in the Liquid architecture is impressive.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:var(--blue-dim);color:var(--blue);">MR</div>
+              <div>
+                <div class="testimonial-card__name">Marcus R.</div>
+                <div class="testimonial-card__role">Fashion Brand Founder</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-card__stars">★★★★★</div>
+            <p class="testimonial-card__quote">Went from a 43 to a 91 Lighthouse score in one sprint. Jay removed three apps we were paying for monthly and replaced them with native Liquid. Clean code, proper documentation, no shortcuts.</p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar" style="background:var(--warm-dim);color:var(--warm);">AK</div>
+              <div>
+                <div class="testimonial-card__name">Anita K.</div>
+                <div class="testimonial-card__role">eCommerce Manager</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lighthouse Meters -->
+        <div class="lighthouse-meters reveal" style="margin-top:40px;" aria-label="Lighthouse performance scores">
+          <div style="grid-column: span 4; text-align:center; padding-bottom:24px; border-bottom:1px solid var(--border); margin-bottom:8px;">
+            <div class="section-label" style="justify-content:center;">Client Store — After Build</div>
+          </div>
+          <div class="lighthouse-meter">
+            <div class="lighthouse-meter__ring">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="fg" cx="50" cy="50" r="45" data-score="97" style="stroke-dashoffset:283;"/>
+              </svg>
+              <div class="lighthouse-meter__score" data-count="97" data-suffix="">97</div>
+            </div>
+            <div class="lighthouse-meter__label">Performance</div>
+          </div>
+          <div class="lighthouse-meter">
+            <div class="lighthouse-meter__ring">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="fg" cx="50" cy="50" r="45" data-score="100" style="stroke:var(--green);stroke-dashoffset:283;"/>
+              </svg>
+              <div class="lighthouse-meter__score" style="color:var(--green);">100</div>
+            </div>
+            <div class="lighthouse-meter__label">Accessibility</div>
+          </div>
+          <div class="lighthouse-meter">
+            <div class="lighthouse-meter__ring">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="fg" cx="50" cy="50" r="45" data-score="100" style="stroke:var(--blue);stroke-dashoffset:283;"/>
+              </svg>
+              <div class="lighthouse-meter__score" style="color:var(--blue);">100</div>
+            </div>
+            <div class="lighthouse-meter__label">Best Practices</div>
+          </div>
+          <div class="lighthouse-meter">
+            <div class="lighthouse-meter__ring">
+              <svg width="100" height="100" viewBox="0 0 100 100">
+                <circle class="bg" cx="50" cy="50" r="45"/>
+                <circle class="fg" cx="50" cy="50" r="45" data-score="92" style="stroke:var(--warm);stroke-dashoffset:283;"/>
+              </svg>
+              <div class="lighthouse-meter__score" style="color:var(--warm);">92</div>
+            </div>
+            <div class="lighthouse-meter__label">SEO</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== ABOUT ====================== -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual reveal">
+            <div class="about-portrait">
+              👨‍💻
+              <div class="about-portrait-label">
+                <div class="about-portrait-label__name">Jay Taraviya</div>
+                <div class="about-portrait-label__role">Shopify & eCommerce Frontend Developer</div>
+                <div class="about-portrait-label__location">📍 Rajkot, Gujarat, India — IST (UTC+5:30)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content reveal reveal-delay-1">
+            <div class="section-label">About Me</div>
+            <h2 id="about-heading">I Build Shopify Stores<br>the Right Way</h2>
+            <p>I'm a Shopify developer and eCommerce frontend engineer based in Rajkot, Gujarat. I specialize in building <strong>production-grade Shopify storefronts</strong> — the kind that load fast, stay maintainable, and let merchants actually run their business without calling a developer for every content change.</p>
+            <p>My approach starts with the architecture. I use <strong>centralized config systems, native Shopify primitives, and proper OS 2.0 section design</strong> to build stores that survive theme updates and scale with the business. I'm obsessive about Lighthouse scores, app removal, and merchant editability.</p>
+            <p>Currently working as a <strong>freelance Shopify developer</strong> on my first major independent client project — a complex custom fulfillment system built natively on Shopify. Before this, I've built and customized stores across food, fashion, beauty, and DTC niches.</p>
+
+            <div class="about-tags">
+              <span class="tag tag--green">Shopify Liquid</span>
+              <span class="tag tag--green">Online Store 2.0</span>
+              <span class="tag tag--blue">JavaScript</span>
+              <span class="tag tag--blue">React</span>
+              <span class="tag tag--warm">Performance</span>
+              <span class="tag tag--warm">Figma → Code</span>
+              <span class="tag tag--muted">Remote</span>
+              <span class="tag tag--muted">IST</span>
+            </div>
+
+            <div class="about-values">
+              <div class="about-value">
+                <span class="about-value__icon">🏗️</span>
+                <div>
+                  <div class="about-value__title">Architecture First</div>
+                  <div class="about-value__desc">I think about system design before I write a line of Liquid.</div>
+                </div>
+              </div>
+              <div class="about-value">
+                <span class="about-value__icon">📦</span>
+                <div>
+                  <div class="about-value__title">App-Free by Default</div>
+                  <div class="about-value__desc">Every app is a subscription and a performance hit. I build native first.</div>
+                </div>
+              </div>
+              <div class="about-value">
+                <span class="about-value__icon">📝</span>
+                <div>
+                  <div class="about-value__title">Document Everything</div>
+                  <div class="about-value__desc">Loom walkthrough, README, changelog on every project handoff.</div>
+                </div>
+              </div>
+              <div class="about-value">
+                <span class="about-value__icon">🔒</span>
+                <div>
+                  <div class="about-value__title">Safe by Default</div>
+                  <div class="about-value__desc">Never on a live theme. Dev theme, feature flags, proper Git workflow.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== RESUME CTA ====================== -->
+    <section aria-label="Resume download">
+      <div class="container">
+        <div class="reveal" style="background:linear-gradient(135deg,var(--surface) 0%,var(--surface-2) 100%);border:1px solid var(--border);border-radius:var(--radius-xl);padding:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+          <div>
+            <div class="section-label">Resume</div>
+            <h2 style="font-size:clamp(28px,3vw,42px);margin-bottom:12px;">Want the Full Picture?</h2>
+            <p style="color:var(--muted);font-size:17px;max-width:480px;">Download my CV or connect on LinkedIn. I respond to serious opportunities within 24 hours.</p>
+          </div>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="resume.pdf" class="btn btn--primary" download>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV (PDF)
+            </a>
+            <a href="https://linkedin.com/in/jaytaraviya241" class="btn btn--outline" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              View LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ====================== CONTACT ====================== -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <div class="section-label">Get in Touch</div>
+            <h2 id="contact-heading">Let's Build<br>Something Great</h2>
+            <p>Whether you need a Shopify section built, a full store redesigned, or a performance audit — I'm happy to take a look and give you a straight answer on what it'll take.</p>
+
+            <div class="contact-links">
+              <a href="mailto:jay@example.com" class="contact-link">
+                <span class="contact-link__icon">✉️</span>
+                <div>
+                  <div class="contact-link__text">jay@example.com</div>
+                  <div class="contact-link__sub">Best for project enquiries</div>
+                </div>
+                <svg class="contact-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/jaytaraviya241" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <span class="contact-link__icon">💼</span>
+                <div>
+                  <div class="contact-link__text">linkedin.com/in/jaytaraviya241</div>
+                  <div class="contact-link__sub">Connect professionally</div>
+                </div>
+                <svg class="contact-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="https://github.com/jaytaraviya241" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <span class="contact-link__icon">🐙</span>
+                <div>
+                  <div class="contact-link__text">github.com/jaytaraviya241</div>
+                  <div class="contact-link__sub">See the code</div>
+                </div>
+                <svg class="contact-link__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <div class="contact-link" style="cursor:default;">
+                <span class="contact-link__icon">🕐</span>
+                <div>
+                  <div class="contact-link__text">IST (UTC+5:30) — Rajkot, India</div>
+                  <div class="contact-link__sub">Response within 24 hours, Mon–Sat</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form reveal reveal-delay-1">
+            <h3>Send a Message</h3>
+            <form name="contact" netlify>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" placeholder="Sarah Chen" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="sarah@store.com" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="project-type">Project Type</label>
+                <select id="project-type" name="project-type">
+                  <option value="">Select project type…</option>
+                  <option>Custom Shopify Section</option>
+                  <option>Figma → Shopify Build</option>
+                  <option>Theme Customization</option>
+                  <option>Performance Optimization</option>
+                  <option>Cart / PDP Improvement</option>
+                  <option>Full Store Build</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message" placeholder="Tell me about your store, what you're trying to build or fix, and your timeline. The more specific, the better I can help." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">JT<span>.</span></div>
+        <div class="footer__copy">© 2025 Jay Taraviya. Built with Liquid-level care.</div>
+        <div class="footer__links">
+          <a href="#work">Work</a>
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="resume.pdf" download>CV</a>
+          <a href="https://github.com/jaytaraviya241" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
