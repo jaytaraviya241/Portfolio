@@ -68,6 +68,18 @@ function Hero() {
       <span aria-hidden="true" className="deco glow left-[12%] top-[18%] h-80 w-80 bg-volt/10" />
 
       <div className="wrap relative w-full py-24">
+        <Reveal delay={0.1} y={24} className="pointer-events-none absolute -right-2 top-20 hidden xl:block">
+          <div className="relative h-[420px] w-[312px] overflow-hidden rounded-[2rem] border border-line/80 bg-bg2 shadow-[0_20px_50px_rgba(14,18,14,0.14)]">
+            <div
+              className="h-full w-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${site.profileImage})` }}
+              aria-label={`${site.name} portrait`}
+              role="img"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/22 to-transparent" />
+          </div>
+        </Reveal>
+
         <Reveal y={12} blur={false}>
           <span className="mb-10 inline-flex items-center gap-2.5 rounded-full border border-line px-4 py-1.5">
             <span className="size-1.5 rounded-full bg-volt pulse-dot" aria-hidden="true" />

@@ -1,6 +1,7 @@
 export const site = {
   name: "Jay Taraviya",
   role: "Shopify Developer",
+  profileImage: "/reel-image.jpg",
   tagline: "Storefronts engineered to sell.",
   email: "jay.taraviya1124@gmail.com",
   github: "https://github.com/jaytaraviya241",

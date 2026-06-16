@@ -2,7 +2,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { TextReveal } from "@/components/motion/TextReveal";
 import { Btn } from "@/components/ui/Btn";
-import { Eyebrow, LogoMark } from "@/components/ui/bits";
+import { Eyebrow } from "@/components/ui/bits";
 import { site } from "@/content/site";
 import { stackGroups } from "@/content/stack";
 
@@ -101,11 +101,15 @@ export default function About() {
             </Reveal>
           </div>
 
-          {/* identity card — swap the monogram block for a portrait when ready */}
           <Reveal delay={0.25} y={30}>
             <div className="rounded-2xl border border-line bg-bg2 p-7">
-              <div className="mb-6 flex aspect-[4/3.4] items-center justify-center rounded-xl border border-line bg-bg">
-                <LogoMark className="size-20 rounded-2xl text-[32px]" />
+              <div className="mb-6 aspect-[4/3.4] overflow-hidden rounded-xl border border-line bg-bg">
+                <div
+                  className="h-full w-full bg-cover bg-center"
+                  style={{ backgroundImage: `url(${site.profileImage})` }}
+                  aria-label={`${site.name} portrait`}
+                  role="img"
+                />
               </div>
               <ul className="flex flex-col font-mono text-[12px]">
                 {[
