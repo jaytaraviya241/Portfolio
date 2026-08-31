@@ -1,53 +1,56 @@
-# Jay Taraviya — Shopify Developer Portfolio
+# Jay Taraviya — Shopify Portfolio
 
-Editorial, chapter-based portfolio built with **React 18 + Vite + TypeScript + Tailwind CSS v4 + TanStack Router + Motion** (Framer Motion's successor). Self-hosted variable fonts (Archivo, Inter, JetBrains Mono), hash-based routing, route-level code splitting.
+Editorial Shopify developer portfolio built with Next.js, TypeScript, and the App Router. The visual system uses a warm-paper palette, an oxblood accent, compact interface type, large editorial headings, and responsive project layouts. Primary content is server-rendered and motion is limited to lightweight CSS interaction states.
 
-## Run it
+## Run locally
 
 ```bash
 npm install
-npm run dev          # → http://localhost:5173
+npm run dev
 ```
 
-| Script | What it does |
+| Script | Purpose |
 | --- | --- |
-| `npm run dev` | Local dev server with HMR |
-| `npm run build` | Type-check + production build → `dist/` |
-| `npm run build:preview` | Single self-contained HTML file → `dist-preview/index.html` — double-click to open, no server needed |
-| `npm run typecheck` | TypeScript only |
+| `npm run dev` | Start the development server |
+| `npm run typecheck` | Run TypeScript checks |
+| `npm run build` | Create the optimized production build |
+| `npm run start` | Serve the production build |
 
-## Deploy
+## Portfolio structure
 
-The build uses **hash routing** (`#/work`, `#/about`) and a relative base, so it deploys anywhere static files are served — no rewrite rules needed:
-
-- **GitHub Pages:** push, then Settings → Pages → deploy `dist/` (e.g. via `gh-pages` branch or an action).
-- **Netlify / Vercel:** build command `npm run build`, publish directory `dist`.
-
-## Where things live
-
-```
-src/
-  content/        ← ALL copy & data: site.ts (email, links), caseStudies.ts,
-                    services.ts, process.ts, proof.ts, stack.ts
-  routes/         ← pages: Home, Work, Services, About, Contact
-  routes/work/    ← case-study route + per-case content (ToniGuy, Odette, Mickeys)
-  components/
-    motion/       ← reusable primitives: Reveal, Stagger, TextReveal, Counter,
-                    Magnetic, Marquee, Tilt
-    layout/       ← nav, footer, command palette (⌘K), page shell
-    ui/           ← buttons, section heads, code blocks, browser frame,
-                    storefront simulations, case cards
-    case/         ← case-study building blocks (hero, stat strip, compare, …)
-legacy/           ← the previous static site, untouched
+```text
+app/                         Homepage, work, about, process, contact, and project routes
+components/                  Reusable navigation, footer, project rows, cards, and form
+lib/portfolioProjects.ts     Project content, links, tags, and cover imports
+styles/globals.css           Design tokens, components, and responsive rules
+casestudy-homepages/         Desktop and mobile storefront captures
+casestudy-homepages/project-covers/
+                             Cleanly named project cover artwork
 ```
 
-## Things to know
+## Add or replace a case-study cover
 
-- **Edit copy in `src/content/`** — pages read from there; no JSX digging needed for text changes.
-- **Honest by design:** every number on the site is real (Mickey's Pies metrics, the 43→91 rescue, the Lighthouse panel, and all three testimonials come from your previously published site). TONI&GUY and Odette Paris are described by scope and role only — **add business metrics to `caseStudies.ts` / the case files only when you can back them.**
-- **Project imagery:** cards and case heroes use original artwork (`ProjectCover.tsx`) — deliberately not fake screenshots. To show real project shots, drop files in `public/work/` and pass `img="/work/file.jpg"` to `<ProjectCover>`.
-- **Contact form** opens a pre-filled email (no backend). On Netlify you can switch to Netlify Forms by adding the `netlify` attribute to the `<form>`.
-- **Low-motion mode** (footer toggle) flips the site to a flat light theme with zero motion — an accessibility fallback alongside `prefers-reduced-motion` support.
-- **⌘K** opens the command palette (pages, case studies, actions).
-- **Theme-editor demo** (homepage, chapter 02): a working miniature of Shopify's section settings — visitors change text/scheme/layout/radius/toggles and watch the live preview *and* the generated `{% schema %}` update. The demo product is clearly labeled fictional. Edit it in `src/components/ui/ThemeEditorDemo.tsx`.
-- **Interactions inventory:** pointer-reactive hero spotlight, masked text reveals, scroll-staggered sections, magnetic gradient buttons, card tilt + glare, cursor-following work previews, animated counters, smooth page transitions — all disabled cleanly by low-motion mode and `prefers-reduced-motion`.
+Project cards use the cleanly named files in `casestudy-homepages/project-covers/`. The original `desktop-home.png` and `mobile-home.png` captures remain inside each project folder for detailed case-study sections.
+
+To add a new project:
+
+1. Add a folder to `casestudy-homepages/` containing `desktop-home.png` and `mobile-home.png`.
+2. Add a matching `<project-slug>-cover.png` to `casestudy-homepages/project-covers/`.
+3. Import the cover and both responsive captures in `lib/portfolioProjects.ts`.
+4. Add a `PortfolioProject` entry with a unique slug, live URL, category, engagement, summary, and tags.
+5. Add `featured: true` if it should appear in the homepage selected-work sequence.
+
+The project is then available on `/work`, gets a static `/work/[slug]` page, and can be linked to its live storefront. Nawala and Fringe Food Co. currently appear as live text links because matching capture folders were not present in the supplied archive.
+
+## Content updates
+
+- Identity and contact information: `lib/site.ts`
+- Project archive and live links: `lib/portfolioProjects.ts`
+- Homepage editorial copy: `components/Hero.tsx` and `app/page.tsx`
+- About narrative: `app/about/page.tsx`
+- Process: `app/services/page.tsx`
+- Case-study placeholders: `app/work/[slug]/page.tsx`
+
+The competitive research and the messaging decisions behind this version are documented in [`docs/portfolio-benchmark.md`](docs/portfolio-benchmark.md).
+
+The detail template deliberately labels unverified project role, outcomes, and learnings as content to add later; it does not invent metrics or client claims.

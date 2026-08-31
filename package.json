@@ -4,33 +4,21 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --open /app.html",
-    "build": "tsc --noEmit && vite build && node scripts/export-pages.mjs",
-    "build:preview": "vite build --config vite.preview.config.ts",
-    "export:pages": "node scripts/export-pages.mjs",
-    "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "^1.4.0",
-    "@fontsource-variable/archivo": "^5.2.5",
-    "@fontsource-variable/inter": "^5.2.5",
-    "@fontsource-variable/jetbrains-mono": "^5.2.5",
-    "@tanstack/react-router": "^1.121.2",
-    "clsx": "^2.1.1",
-    "motion": "^12.15.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "lucide-react": "^0.468.0",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
     "@types/node": "^22.15.21",
-    "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^4.5.0",
-    "tailwindcss": "^4.1.8",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5",
-    "vite-plugin-singlefile": "^2.2.0"
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.8.3"
   }
 }
