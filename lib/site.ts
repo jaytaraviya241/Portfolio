@@ -1,3 +1,5 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export const site = {
   name: "Jay Taraviya",
   role: "Shopify Developer",
@@ -7,5 +9,5 @@ export const site = {
   github: "https://github.com/jaytaraviya241",
   location: "Rajkot, India",
   availability: "Available for select projects",
-  profileImage: "/reel-image.jpg",
+  profileImage: `${basePath}/reel-image.jpg`,
 } as const;

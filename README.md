@@ -1,6 +1,6 @@
 # Jay Taraviya — Shopify Portfolio
 
-Editorial Shopify developer portfolio built with Next.js, TypeScript, and the App Router. The visual system uses a warm-paper palette, an oxblood accent, compact interface type, large editorial headings, and responsive project layouts. Primary content is server-rendered and motion is limited to lightweight CSS interaction states.
+Editorial Shopify developer portfolio built with Next.js, TypeScript, and the App Router. The visual system uses warm ivory, graphite, restrained ultramarine, compact interface type, large editorial headings, and responsive project layouts. Primary content is server-rendered and motion is limited to lightweight CSS interaction states.
 
 ## Run locally
 
@@ -15,6 +15,10 @@ npm run dev
 | `npm run typecheck` | Run TypeScript checks |
 | `npm run build` | Create the optimized production build |
 | `npm run start` | Serve the production build |
+
+## Deployment
+
+Pushes to `main` deploy automatically to [GitHub Pages](https://jaytaraviya241.github.io/Portfolio/) through `.github/workflows/deploy-pages.yml`. The workflow creates a static Next.js export with the repository base path, uploads the `out` artifact, and deploys it through the `github-pages` environment.
 
 ## Portfolio structure
 
