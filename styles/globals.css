@@ -639,7 +639,12 @@ img {
 .neo-home-profile__portrait img,
 .neo-about-intro__image {
   object-fit: cover;
-  object-position: 50% 24%;
+  object-position: 50% 22%;
+}
+
+.neo-home-profile__portrait img {
+  transform: scale(1.28);
+  transform-origin: 50% 24%;
 }
 
 .neo-home-cta {
@@ -1021,7 +1026,9 @@ img {
 
 .neo-about-hero__portrait > img {
   object-fit: cover;
-  object-position: 50% 22%;
+  object-position: 50% 20%;
+  transform: scale(1.12);
+  transform-origin: 50% 22%;
 }
 
 .neo-about-hero__facts {
