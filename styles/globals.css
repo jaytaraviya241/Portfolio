@@ -633,6 +633,7 @@ img {
   position: relative;
   min-height: 13.5rem;
   overflow: hidden;
+  border: 1px solid var(--line-soft);
   background: var(--paper-deep);
 }
 
@@ -643,8 +644,8 @@ img {
 }
 
 .neo-home-profile__portrait img {
-  transform: scale(1.42);
-  transform-origin: 50% 23%;
+  transform: scale(1.58);
+  transform-origin: 50% 25%;
 }
 
 .neo-home-cta {
@@ -1024,30 +1025,33 @@ img {
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
+  border: 1px solid var(--line);
+  border-bottom: 0;
   background: var(--paper-deep);
 }
 
 .neo-about-hero__image > img {
   object-fit: cover;
-  object-position: 50% 21%;
-  transform: scale(1.14);
-  transform-origin: 50% 23%;
+  object-position: 50% 23%;
+  transform: scale(1.34);
+  transform-origin: 50% 27%;
 }
 
 .neo-about-hero__facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid var(--line);
+  border: 1px solid var(--line);
   background: var(--paper-bright);
 }
 
 .neo-about-hero__facts span {
   min-width: 0;
   border-right: 1px solid var(--line);
-  padding: 0.85rem 0.65rem;
-  font-size: 0.6rem;
+  padding: 0.95rem 0.5rem;
+  color: var(--muted);
+  font-size: 0.58rem;
   font-weight: 720;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
 }
