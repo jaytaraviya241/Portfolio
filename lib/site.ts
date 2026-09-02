@@ -9,5 +9,5 @@ export const site = {
   github: "https://github.com/jaytaraviya241",
   location: "Rajkot, India",
   availability: "Available for select projects",
-  profileImage: `${basePath}/jay-taraviya-portrait.webp`,
+  profileImage: `${basePath}/jay-taraviya-portrait-v2.webp`,
 } as const;

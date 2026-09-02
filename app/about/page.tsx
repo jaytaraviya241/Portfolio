@@ -34,13 +34,15 @@ export default function AboutPage() {
             <p>I’m {site.name}, an independent Shopify developer based in {site.location}. I help DTC teams translate ambitious design into storefront systems customers understand and merchants can run.</p>
           </div>
           <aside className="neo-about-hero__portrait">
-            <Image
-              src={site.profileImage}
-              alt={`${site.name}, Shopify developer`}
-              fill
-              quality={60}
-              sizes="(max-width: 900px) calc(100vw - 2.5rem), 390px"
-            />
+            <div className="neo-about-hero__image">
+              <Image
+                src={site.profileImage}
+                alt={`${site.name}, Shopify developer`}
+                fill
+                quality={60}
+                sizes="(max-width: 900px) calc(100vw - 2.5rem), 390px"
+              />
+            </div>
             <div className="neo-about-hero__facts">
               <span>Independent</span>
               <span>{site.location}</span>
