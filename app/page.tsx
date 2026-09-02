@@ -44,7 +44,7 @@ export default function HomePage() {
           <div className="neo-home-profile__bio">
             <div>
               <p className="neo-kicker">Built for brands that care</p>
-              <p>Over the past 8+ years, I’ve helped DTC brands turn ambitious ideas into reliable, revenue-driven experiences. I work closely with founders and teams who value craftsmanship, clarity, and results.</p>
+              <p>Since 2020, I’ve helped DTC brands turn ambitious ideas into reliable, revenue-driven experiences. I work closely with founders and teams who value craftsmanship, clarity, and results.</p>
               <Link href="/about" className="neo-project-link">More about Jay <ArrowUpRight aria-hidden="true" size={14} /></Link>
             </div>
             <div className="neo-home-profile__portrait">

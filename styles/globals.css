@@ -640,7 +640,6 @@ img {
 .neo-about-intro__image {
   object-fit: cover;
   object-position: 50% 24%;
-  filter: grayscale(1) contrast(0.96);
 }
 
 .neo-home-cta {
@@ -1023,7 +1022,6 @@ img {
 .neo-about-hero__portrait > img {
   object-fit: cover;
   object-position: 50% 22%;
-  filter: grayscale(1) contrast(0.96);
 }
 
 .neo-about-hero__facts {

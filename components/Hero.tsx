@@ -28,7 +28,7 @@ export function Hero() {
 
         <div className="neo-hero__bio">
           <p>
-            Senior Shopify developer with 8+ years of experience partnering with ambitious brands.
+            Senior Shopify developer partnering with ambitious brands since 2020.
             I care about the details most—performance, accessibility, and revenue.
           </p>
           <p className="neo-kicker">Based in India</p>

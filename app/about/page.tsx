@@ -44,7 +44,7 @@ export default function AboutPage() {
             <div className="neo-about-hero__facts">
               <span>Independent</span>
               <span>{site.location}</span>
-              <span>8+ years</span>
+              <span>Since 2020</span>
             </div>
           </aside>
         </div>
